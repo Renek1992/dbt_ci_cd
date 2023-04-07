@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: TPCH_SF1
+    database: SNOWFLAKE_SAMPLE_DATA
+    description: Data from application database, brought in by an EL process.
+    tables:
+      - name: CUSTOMER
+        columns:
+        - name: C_CUSTKEY
+          tests:
+            - not_null
+      - name: ORDERS
+        columns:
+        - name: O_ORDERKEY
+          tests:
+            - not_null
+            - unique
+      - name: NATION

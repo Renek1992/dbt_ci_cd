@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+    - name: stg_eltool__orders
+      description: "orders table"
+      columns:
+          - name: order_key
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
